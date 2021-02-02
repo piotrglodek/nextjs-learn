@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 // react
 import { useEffect, useState } from 'react';
+// components
+import Head from '../components/Head';
 
 export default function NotFound() {
   const router = useRouter();
@@ -25,13 +27,16 @@ export default function NotFound() {
   });
 
   return (
-    <div className='not-found'>
-      <h1>Ooops...</h1>
-      <h2>That page cannot be found.</h2>
-      <Link href='/'>
-        <a>Go back to home page</a>
-      </Link>
-      <p>redirecting to home in {seconds}s</p>
-    </div>
+    <>
+      <Head title='Not found' />
+      <div className='not-found'>
+        <h1>Ooops...</h1>
+        <h2>That page cannot be found.</h2>
+        <Link href='/'>
+          <a>Go back to home page</a>
+        </Link>
+        <p>redirecting to home in {seconds}s</p>
+      </div>
+    </>
   );
 }

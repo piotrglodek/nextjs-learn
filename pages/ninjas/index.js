@@ -1,8 +1,14 @@
+// components
+import Head from '../../components/Head';
+
 const Ninjas = () => {
   return (
-    <div>
-      <h1>All ninjas</h1>
-    </div>
+    <>
+      <Head title='Ninjas' />
+      <div>
+        <h1>All ninjas</h1>
+      </div>
+    </>
   );
 };
 
