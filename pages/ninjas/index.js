@@ -1,5 +1,7 @@
 // components
 import Head from '../../components/Head';
+// next
+import Link from 'next/link';
 // styles
 import styles from '../../styles/Ninjas.module.css';
 
@@ -23,9 +25,11 @@ const Ninjas = ({ ninjas }) => {
         <h1>All ninjas</h1>
         {ninjas.map(ninja => (
           <div key={ninja.id}>
-            <a href='' className={styles.single}>
-              <h3>{ninja.name}</h3>
-            </a>
+            <Link href={`/ninjas/${ninja.id}`}>
+              <a href='' className={styles.single}>
+                <h3>{ninja.name}</h3>
+              </a>
+            </Link>
           </div>
         ))}
       </div>
